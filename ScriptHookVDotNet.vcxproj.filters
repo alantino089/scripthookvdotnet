@@ -114,6 +114,9 @@
     <ClCompile Include="source\scripting\Audio.cpp">
       <Filter>scripting\Game</Filter>
     </ClCompile>
+    <ClCompile Include="source\scripting\Menu.cpp">
+      <Filter>scripting\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\core\Native.hpp">
@@ -223,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="source\scripting\Audio.hpp">
       <Filter>scripting\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scripting\Menu.hpp">
+      <Filter>scripting\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

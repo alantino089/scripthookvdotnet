@@ -15,6 +15,7 @@
  */
 
 #include "ScriptDomain.hpp"
+#include "Menu.hpp"
 #include "Settings.hpp"
 
 namespace GTA
@@ -33,6 +34,18 @@ namespace GTA
 	{
 	}
 
+	Viewport ^Script::View::get()
+	{
+		if (Object::ReferenceEquals(_viewport, nullptr))
+		{
+			_viewport = gcnew GTA::Viewport();
+
+			Tick += gcnew EventHandler(this, &Script::HandleViewportDraw);
+			KeyUp += gcnew KeyEventHandler(this, &Script::HandleViewportInput);
+		}
+
+		return _viewport;
+	}
 	ScriptSettings ^Script::Settings::get()
 	{
 		if (Object::ReferenceEquals(_settings, nullptr))
@@ -140,5 +153,18 @@ namespace GTA
 			// Yield execution to next tick
 			Wait(_interval);
 		}
+	}
+	void Script::HandleViewportDraw(Object ^sender, EventArgs ^e)
+	{
+		_viewport->Draw();
+	}
+	void Script::HandleViewportInput(Object ^sender, KeyEventArgs ^e)
+	{
+		if (e->KeyCode == ActivateKey) _viewport->HandleActivate();
+		else if (e->KeyCode == BackKey) _viewport->HandleBack();
+		else if (e->KeyCode == LeftKey) _viewport->HandleChangeItem(false);
+		else if (e->KeyCode == RightKey) _viewport->HandleChangeItem(true);
+		else if (e->KeyCode == UpKey) _viewport->HandleChangeSelection(false);
+		else if (e->KeyCode == DownKey) _viewport->HandleChangeSelection(true);
 	}
 }

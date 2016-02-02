@@ -66,6 +66,7 @@
     <ClCompile Include="source\scripting\Euphoria.cpp" />
     <ClCompile Include="source\scripting\Game.cpp" />
     <ClCompile Include="source\scripting\Matrix.cpp" />
+    <ClCompile Include="source\scripting\Menu.cpp" />
     <ClCompile Include="source\scripting\Model.cpp" />
     <ClCompile Include="source\scripting\Ped.cpp" />
     <ClCompile Include="source\scripting\Pickup.cpp" />
@@ -100,6 +101,7 @@
     <ClInclude Include="source\scripting\EuphoriaHelpers.hpp" />
     <ClInclude Include="source\scripting\Game.hpp" />
     <ClInclude Include="source\scripting\Matrix.hpp" />
+    <ClInclude Include="source\scripting\Menu.hpp" />
     <ClInclude Include="source\scripting\Model.hpp" />
     <ClInclude Include="source\scripting\Ped.hpp" />
     <ClInclude Include="source\scripting\PedHashes.hpp" />
